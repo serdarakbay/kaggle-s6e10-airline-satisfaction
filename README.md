@@ -12,6 +12,7 @@ My solution for [Playground Series S6E10](https://www.kaggle.com/competitions/pl
 | Feature engineering + CatBoost | 0.96035 | |
 | Hill climbing (own GBDTs + TabPFN OOF) | 0.96147 | |
 | LR stack, own 14 models (`all14`) | 0.96158 | 0.96114 |
+| LR stack, 138 OOFs incl. public ones (`lib138`) | 0.96209 | 0.96175 |
 | LR stack, 164 OOFs incl. public ones (`lib164`) | **0.96218** | **0.96176** |
 
 Public LB went from ~1823rd to ~529th out of ~2500 teams.
