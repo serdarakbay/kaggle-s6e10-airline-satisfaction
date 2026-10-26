@@ -16,6 +16,7 @@ My solution for [Playground Series S6E10](https://www.kaggle.com/competitions/pl
 | LR stack, 164 OOFs incl. public ones (`lib164`) | **0.96218** | **0.96176** |
 
 Public LB went from ~1823rd to ~529th out of ~2500 teams.
+
 Private LB: _will add after the competition ends._
 
 ## What I did
@@ -27,13 +28,16 @@ Private LB: _will add after the competition ends._
 - Frequency encoding
 - Route profile: rows with the same Flight Distance treated as the same route, mean of each column per route and the row's difference from it
 
-**Models**
+**Models** 
+
 LightGBM, XGBoost and CatBoost, 5-fold stratified CV, OOF predictions saved for each.
 
 **Ensembling**
+
 Started with hill climbing on OOFs. The final version is a logistic regression stacker on logits of OOF predictions, scored with nested CV so the stacker weights don't leak into the CV score. Adding public OOFs from other Kagglers gave the biggest jump.
 
 **Final picks**
+
 I picked two stacks that are built differently instead of the two best scores: `lib164` (uses public OOFs) and `all14` (only my own models). `lib138` scored almost the same as `lib164` but it's basically the same file, so if one fails on private LB the other fails too.
 
 ## What didn't work
